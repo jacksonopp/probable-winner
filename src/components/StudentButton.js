@@ -66,6 +66,7 @@ export default function StudentButton() {
             // set the index to zero
             localStorage.setItem("index", 0);
             setIndex(parseInt(localStorage.index));
+            window.location.reload();
           }
         }}
       >
