@@ -1,0 +1,14 @@
+.student-button-div {
+   margin: 10vh 0 0 0;
+}
+
+button {
+   background: rebeccapurple;
+   color: white;
+   height: auto;
+   width: 70vw;
+   font-size: 5rem;
+   padding: 10px;
+   border-radius: 10px;
+   border: none;
+}

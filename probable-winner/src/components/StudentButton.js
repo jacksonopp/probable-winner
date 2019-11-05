@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import shuffle from 'shuffle-array';
 
-const getRandomStudent = () => {
+const shuffleStudents = () => {
   const studentList = [
     'student one',
     'student two',
@@ -10,24 +11,36 @@ const getRandomStudent = () => {
     'student six',
   ];
 
-  const randomNumber = Math.floor(Math.random() * studentList.length);
+  const studentsShuffled = shuffle(studentList);
 
-  return randomNumber()
+  return studentsShuffled;
 }
 
-export default function StudentButton() {
 
+export default function StudentButton() {
+  const [index, setIndex] = useState(0);
   const [student, setStudent] = useState("")
+  const [students, setStudents] = useState([]);
   useEffect(() => {
-    setStudent(getRandomStudent())
+    setStudents(shuffleStudents);
+    setStudent(students[index])
   }, [])
 
   return (
     <>
       <button
-        onClick={() => { setStudent(getRandomStudent()) }}
+        onClick={() => {
+          if (index < students.length) {
+            setIndex(index + 1);
+          } else {
+            setIndex(0);
+            setStudents(shuffleStudents);
+            setStudent(students[0]);
+          }
+          setStudent(students[index]);
+        }}
       >
-        {student}
+        {student ? student : "start"}
       </button>
     </>
   )
