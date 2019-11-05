@@ -33,35 +33,43 @@ const shuffleStudents = () => {
   ];
 
   const studentsShuffled = shuffle(studentList);
+  localStorage.setItem("studentsShuffled", JSON.stringify(studentsShuffled));
+  console.log(studentsShuffled);
 
   return studentsShuffled;
 }
 
-
 export default function StudentButton() {
-  const [index, setIndex] = useState(0);
-  const [student, setStudent] = useState("")
+  const [index, setIndex] = useState(localStorage.index);
   const [students, setStudents] = useState([]);
   useEffect(() => {
-    setStudents(shuffleStudents);
-    setStudent(students[index])
-  }, [])
+    if (!localStorage.studentsShuffled || !localStorage.index) {
+      shuffleStudents();
+      localStorage.setItem("index", 0);
+      setIndex(parseInt(localStorage.index));
+    }
+    setStudents(JSON.parse(localStorage.studentsShuffled));
+  }, []);
 
   return (
     <>
       <button
         onClick={() => {
-          if (index < students.length) {
-            setIndex(index + 1);
+          if (index < students.length - 1) {
+            // advance the index by one
+            localStorage.setItem("index", parseInt(localStorage.index) + 1);
+            setIndex(parseInt(localStorage.index));
+            // set the current student to the index
           } else {
-            setIndex(0);
-            setStudents(shuffleStudents);
-            setStudent(students[0]);
+            //shuffle the students
+            shuffleStudents();
+            // set the index to zero
+            localStorage.setItem("index", 0);
+            setIndex(parseInt(localStorage.index));
           }
-          setStudent(students[index]);
         }}
       >
-        {student ? student : "start"}
+        {students ? students[index] : "something went wrong"}
       </button>
     </>
   )
