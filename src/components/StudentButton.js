@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import shuffle from 'shuffle-array';
 
+import "../style/studentButton.css"
+
 const shuffleStudents = () => {
   const studentList = [
     "Amira Chikhaoui",
@@ -51,6 +53,7 @@ export default function StudentButton() {
   return (
     <>
       <button
+        className="student-button"
         onClick={() => {
           if (index < students.length - 1) {
             // advance the index by one

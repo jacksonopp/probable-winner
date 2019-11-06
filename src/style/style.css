@@ -8,16 +8,6 @@ body {
    margin: 30vh 0 0 0;
 }
 
-button {
-   background: rebeccapurple;
-   color: white;
-   height: auto;
-   width: fit-content;
-   font-size: 5rem;
-   padding: 10px;
-   border-radius: 10px;
-   border: none;
-   -webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.5); /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-   -moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.5); /* Firefox 3.5 - 3.6 */
-   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.2);
+.reset-button-div {
+   margin: 30vh 0 0 0;
 }
