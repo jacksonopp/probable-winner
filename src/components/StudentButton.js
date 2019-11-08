@@ -10,7 +10,7 @@ const shuffleStudents = () => {
     "AyDy Burling",
     "Brian Zauner",
     "Claudio Garcia",
-    "Detvisith Sorthepharack",
+    "Det Sorthepharack",
     "Elliot Trejo",
     "Jake O'Toole",
     "Jesse Edwards",
@@ -27,7 +27,7 @@ const shuffleStudents = () => {
     "Paul Hendrickson",
     "Phalcheat Chheang",
     "Ryan Ellingson",
-    "Samantha Sengsouvanh",
+    "Sam Sengsouvanh",
     "William Molhoek",
   ];
 
