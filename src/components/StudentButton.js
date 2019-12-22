@@ -14,7 +14,6 @@ const shuffleStudents = () => {
     "Elliot Trejo",
     "Jake O'Toole",
     "Jesse Edwards",
-    "Lance Gauer",
     "Mark McGraw",
     "Mark Sirany",
     "Mary Jacobs",
