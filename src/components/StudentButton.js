@@ -1,32 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import shuffle from 'shuffle-array';
+import React, { useState, useEffect } from "react";
+import shuffle from "shuffle-array";
 
-import "../style/studentButton.css"
+import "../style/studentButton.css";
 
 const shuffleStudents = () => {
   const studentList = [
-    "Amira Chikhaoui",
-    "Austin Schlander",
-    "AyDy Burling",
-    "Brian Zauner",
-    "Claudio Garcia",
-    "Det Sorthepharack",
-    "Elliot Trejo",
-    "Jake O'Toole",
-    "Jesse Edwards",
-    "Mark McGraw",
-    "Mark Sirany",
-    "Mary Jacobs",
-    "Matt Beachey",
-    "Max McCord",
-    "Michael Iverson",
-    "Michelle Owodunni",
-    "Patrick Brown",
-    "Paul Hendrickson",
-    "Paul Chheang",
-    "Ryan Ellingson",
-    "Sam Sengsouvanh",
-    "William Molhoek",
+    "Chue Yang",
+    "Pangsua Vang",
+    "Peter Baker",
+    "Christian Gonzalez",
+    "Anitha Venkatesan",
+    "John Leintz",
+    "Davis Sjoberg",
+    "Jesus Rubio",
+    "Sathya Guru",
+    "Michael Nguyen",
+    "Gene Shaver",
+    "Tom Johnson",
+    "Salma Mohamed",
+    "Will Sorn",
+    "John Ferro",
+    "Tim Tanner",
+    "Ahmed Bule",
+    "Cassandra Perez",
+    "Jonathan Montruil",
+    "Vanida Somchaleunsouk",
+    "Nick Schoess",
+    "Katelyn Glenna",
+    "Chue Yang",
+    "Jacob Thompson",
+    "Nabil Negeye",
+    "Benjamin Vasko",
+    "Simeon Ogunyemi",
+    "Jamal Lakis",
+    "Joe Peterson"
   ];
 
   const studentsShuffled = shuffle(studentList);
@@ -34,7 +41,7 @@ const shuffleStudents = () => {
   console.log(studentsShuffled);
 
   return studentsShuffled;
-}
+};
 
 export default function StudentButton() {
   const [index, setIndex] = useState(localStorage.index);
@@ -71,5 +78,5 @@ export default function StudentButton() {
         {students ? students[index] : "something went wrong"}
       </button>
     </>
-  )
+  );
 }
